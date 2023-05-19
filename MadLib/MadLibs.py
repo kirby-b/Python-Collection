@@ -1,5 +1,6 @@
 class MadLibs:
     
+    #Normal MadLibs
     def SimpleMadLibModeFunc():
         import random
         print("Welcome To MadLib. I will give you a prompt and then ask for three inputs(they will be inserted at the capitalized words in parentheses).\n")
@@ -63,6 +64,7 @@ class MadLibs:
             print("Alright!")
             MadLibs.SimpleMadLibModeFunc()
 
+    #Prints the CrazyMadLib
     def CrazyMadLibModeFunc():
         print("Welcome to Crazy MadLib. I will ask you for three words and then put them in every prompt in the program.")
         s1 = input("Word 1:")

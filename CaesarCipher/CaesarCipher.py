@@ -1,6 +1,6 @@
-# Caesar Cipher
-SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()?,.<>\|"
+SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()?,.<>\|~`ÁÉÍÓÚÝáéíóúý"
 MAX_KEY_SIZE = len(SYMBOLS)
+# Holds the number of characters in the symbols variable (maximum shift number)
 
 def getMode():
     while True:
@@ -22,6 +22,7 @@ def getKey():
         key = int(input())
         if (key >= 1 and key <= MAX_KEY_SIZE):
             return key
+    #Gets the number of characters the message with get shifted by
 
 def getTranslatedMessage(mode, message, key):
     if mode[0] == "d":
@@ -30,7 +31,8 @@ def getTranslatedMessage(mode, message, key):
 
     for symbol in message:
         symbolIndex = SYMBOLS.find(symbol)
-        if symbolIndex == -1: # Symbol not found in SYMBOLS.
+        if symbolIndex == -1: 
+            # Symbol not found in SYMBOLS.
             # Just add this symbol without any change.
             translated += symbol
         else:
@@ -49,8 +51,7 @@ mode = getMode()
 message = getMessage()
 if mode[0] != "b":
     key = getKey()
-print("Your translated text is:")
-if mode[0] != "b":
+    print("Your translated message is:")
     print(getTranslatedMessage(mode, message, key))
 else:
     for key in range(1, MAX_KEY_SIZE + 1):

@@ -30,7 +30,7 @@ def getClues(guess, secretNum):
     return " ".join(clues)
 
 def isOnlyDigits(num):
-    # Returns True if num is a string of only digits. Otherwise, returns False.
+    # Checks to make sure the user only input digits. Returns true if they did, otherwise it is false.
     if num == "":
         return False
 
@@ -45,12 +45,12 @@ print("I am thinking of a %s-digit number. Try to guess what it is." % (NUM_DIGI
 print("The clues I give are...")
 print("When I say:    That means:")
 print(" NOPE        None of the digits is correct.")
-print(" Cold          One digit is correct but in the wrong position.")
-print(" Warm         One digit is correct and in the right position.")
-
+print(" Cold        One digit is correct but in the wrong position.")
+print(" Warm        One digit is correct and in the right position.")
+#Tells the user what the clues mean
 while True:
     secretNum = getSecretNum()
-    print("I have thought up a number. You have %s guesses to get it." % (MAX_GUESS))
+    print("I have generated a number. You have %s guesses to get it." % (MAX_GUESS))
 
     guessesTaken = 1
     while guessesTaken <= MAX_GUESS:
@@ -66,7 +66,7 @@ while True:
             break
         if guessesTaken > MAX_GUESS:
             print("You ran out of guesses. The answer was %s." % (secretNum))
-
+    #Checks to see if the user guessed the number and if they have run out of guesses
     print("Do you want to play again? (yes or no)")
     if not input().lower().startswith("y"):
         break

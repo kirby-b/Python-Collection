@@ -1,15 +1,15 @@
 import random
 
-def drawBoard(board):
+def drawBoard(b):
     # This function prints out the board that was passed
 
-    # "board" is a list of 10 strings representing the board (ignoring 0)
+    # Board is a list of 10 strings (b) representing the board (ignoring 0)
 
-    print(board[7] + "|" + board[8] + "|" + board[9])
+    print(b[7] + "|" + b[8] + "|" + b[9])
     print("-+-+-")
-    print(board[4] + "|" + board[5] + "|" + board[6])
+    print(b[4] + "|" + b[5] + "|" + b[6])
     print("-+-+-")
-    print(board[1] + "|" + board[2] + "|" + board[3])
+    print(b[1] + "|" + b[2] + "|" + b[3])
 
 def inputPlayerLetter():
     # Lets the player choose their letter.
@@ -32,8 +32,8 @@ def whoGoesFirst():
     else:
         return "player"
 
-def makeMove(board, letter, move):
-    board[move] = letter
+def makeMove(b, letter, move):
+    b[move] = letter
 
 def isWinner(b,l):
     # Given a board(b) and a players letter(l), this function returns True if that player has won.
@@ -47,31 +47,31 @@ def isWinner(b,l):
             (b[7] == l and b[5] == l and b[3] == l) or # Diagonal
             (b[9] == l and b[5] == l and b[1] == l)) # Diagonal
 
-def getBoardCopy(board):
+def getboardC(b):
     # Make a copy of the board list and returns it.
-    boardCopy = []
-    for i in board:
-        boardCopy.append(i)
-    return boardCopy
+    boardC = []
+    for i in b:
+        boardC.append(i)
+    return boardC
 
-def isSpaceFree(board, move):
+def isSpaceFree(b, move):
     # Return True if space is free.
-    return board[move] == " "
+    return b[move] == " "
 
-def getPlayerMove(board):
+def getPlayerMove(b):
     # Lets the player move.
     move = " "
-    while move not in " 1 2 3 4 5 6 7 8 9".split() or not isSpaceFree(board, int(move)):
+    while move not in " 1 2 3 4 5 6 7 8 9".split() or not isSpaceFree(b, int(move)):
         print("What is your next move? (1-9)")
         move = input()
     return int(move)
 
-def chooseRandomMoveFromList(board, moveList):
+def chooseRandomMoveFromList(b, moveList):
     # Returns a valid move from the passed list on the passed board.
     # Returns none if no valid move.
     possibleMoves = []
     for i in moveList:
-        if isSpaceFree(board, i):
+        if isSpaceFree(b, i):
             possibleMoves.append(i)
     
     if len(possibleMoves) != 0:
@@ -79,7 +79,7 @@ def chooseRandomMoveFromList(board, moveList):
     else:
         return None
 
-def getComputerMove(board,computerLetter):
+def getComputerMove(b,computerLetter):
     # Given a board and the computer's letter, determine where to move and return that move.
     if computerLetter == "X":
         playerLetter = "O"
@@ -89,36 +89,36 @@ def getComputerMove(board,computerLetter):
     # Here is the algorithm for our Tic-Tac-Toe AI:
     # Checks if it can win in the next move.
     for i in range(1,10):
-        boardCopy = getBoardCopy(board)
-        if isSpaceFree(boardCopy, i):
-            makeMove(boardCopy, computerLetter, i)
-            if isWinner(boardCopy, computerLetter):
+        boardC = getboardC(b)
+        if isSpaceFree(boardC, i):
+            makeMove(boardC, computerLetter, i)
+            if isWinner(boardC, computerLetter):
                 return i
     
     # Checks if player is about to win on their next move and blocks them.
     for i in range(1,10):
-        boardCopy = getBoardCopy(board)
-        if isSpaceFree(boardCopy, i):
-            makeMove(boardCopy, playerLetter, i)
-            if isWinner(boardCopy, playerLetter):
+        boardC = getboardC(b)
+        if isSpaceFree(boardC, i):
+            makeMove(boardC, playerLetter, i)
+            if isWinner(boardC, playerLetter):
                 return i
 
     # Try to take one of the corners, if they are free.
-    move = chooseRandomMoveFromList(board, [1,3,7,9])
+    move = chooseRandomMoveFromList(b, [1,3,7,9])
     if move != None:
         return move
     
     # Try to take the center, if it is free.
-    if isSpaceFree(board, 5):
+    if isSpaceFree(b, 5):
         return 5
     
     # Move on one of the sides.
-    return chooseRandomMoveFromList(board, [2,4,6,8])
+    return chooseRandomMoveFromList(b, [2,4,6,8])
 
-def isBoardFull(board):
+def isBoardFull(b):
     # Returns True if every space on the board has been taken. Otherwise, returns false.
     for i in range(1,10):
-        if isSpaceFree(board, i):
+        if isSpaceFree(b, i):
             return False
     return True
 

@@ -17,12 +17,13 @@ jokes = ["If I got 50 cents for every failed math exam, I\'d have $6.30 now.","2
 "I was shocked when I found out my toaster was not waterproof.","I have a fish that can breakdance! Only for 20 seconds though, and only once.","Once, my father came home and found me in front of a roaring fire. That made my father very mad, as we didn\'t have a fireplace.",
 "\"I\'m sorry\" and \"I apologize\" mean the same thing. Except at a funeral.", "I made a website for orphans. It doesnt have a home page.", "I threw a boomerang a few years ago. Now I live in constant fear.", "They laughed at my crayon drawing. I laughed at their chalk outline.",
 "To teach kids about democracy, I let them vote on dinner. They picked tacos. Then I made pizza because they dont live in a swing state."]
+#List of jokes. They are not for everybody and some are kinda offensive
 print (len(jokes))
 def Jokefunc():
     print("\n"+ jokes[random.randrange(0,45)] + "\n")
     print ("Would you like another joke")
     YesNo = str.lower(str.strip(input()))
-        
+    #Asks if you want to hear another joke
     while YesNo != "yes" and YesNo != "no" and YesNo != "n" and YesNo != "y":
         print("Error, try again")
         YesNo = str.lower(str.strip(input()))
