@@ -13,7 +13,7 @@ def word_count(word_string: str):
         if countable[x] == "" or countable[x].isspace():
             countable.pop(x)
         else:
-            print(countable[x])
             x +=1
-    print(str(len(countable)))
+    
+    print("This sentence contains " + str(len(countable)) + " words")
 main()
