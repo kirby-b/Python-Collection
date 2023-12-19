@@ -26,6 +26,7 @@ class MadLibs:
             print("The best way to stay \"ADJECTIVE\" is to \"ACTION\" \"NOUN\" everyday.\n")
         if format == 9:
             print("I \"ACTION\" my \"NOUN\" everyday like a \"ADJECTIVE\".\n")
+        #Prints a random format
 
         s1 = input("Blank 1:")
         s2 = input("Blank 2:")
@@ -48,11 +49,12 @@ class MadLibs:
             print("The best way to stay "+ s1 + " is to " + s2 + " " + s3 + " everyday.")
         if format == 9:
             print("I "+ s1 + " my " + s2 + " everyday like a " + s3 + ".")
+        #Puts your answers in that format
 
         print("I hope that was what you wanted")
         print ("Would you like to do another")
         YesNo = str.lower(str.strip(input()))
-            
+            #Figures out if you want to paly again
         while YesNo != "yes" and YesNo != "no" and YesNo != "n" and YesNo != "y":
             print("Error, try again")
             YesNo = str.lower(str.strip(input()))
@@ -70,7 +72,7 @@ class MadLibs:
         s1 = input("Word 1:")
         s2 = input("Word 2:")
         s3 = input("Word 3:")
-        
+        #Just gets three words and puts them in everything
         print(s1 + " went to the " + s2 + " with their " + s3)
         print("The "+ s1 + " is captain of the "+ s2 + " in " + s3 + " city")
         print("The "+ s1 + " " + s2 + " fox jumped over the " + s3 + " dog.")

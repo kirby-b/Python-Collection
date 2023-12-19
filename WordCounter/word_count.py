@@ -11,7 +11,7 @@ def word_count(word_string: str):
     countable = word_string.split(" ")
     while x < len(countable):
         if countable[x] == "" or countable[x].isspace():
-            countable.pop(x)
+            countable.pop(x)#Pops the index if it is empty or a space
         else:
             x +=1
     
