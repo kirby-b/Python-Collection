@@ -20,19 +20,5 @@ jokes = ["If I got 50 cents for every failed math exam, I\'d have $6.30 now.","2
 #List of jokes. They are not for everybody and some are kinda offensive
 def Jokefunc():
     print("\n"+ jokes[random.randrange(0,45)] + "\n")
-    #Prints a random joke from the list using a random number
-    print ("Would you like another joke")
-    YesNo = str.lower(str.strip(input()))
-    #Asks if you want to hear another joke
-    while YesNo != "yes" and YesNo != "no" and YesNo != "n" and YesNo != "y":
-        print("Error, try again")
-        YesNo = str.lower(str.strip(input()))
-
-    if YesNo == "no" or YesNo == "n":
-        print("Goodbye!")
-
-    if YesNo == "yes" or YesNo == "y":
-        print("Alright!")
-        Jokefunc()
 
 Jokefunc()
