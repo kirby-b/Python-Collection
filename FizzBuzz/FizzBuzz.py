@@ -19,3 +19,5 @@ class FizzBuzz:
     fizzBuzz(10)
     print("\nInput Number 20:")
     fizzBuzz(20)
+
+#There is also a holiday version on my gists
