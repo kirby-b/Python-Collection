@@ -7,7 +7,6 @@ def word_count(word_string: str):
     #Makes a list by splitting the words with spaces as delimiters
     y = 0
     x = 0
-    word_string.strip(" ")
     countable = word_string.split(" ")
     while x < len(countable):
         if countable[x] == "" or countable[x].isspace():
