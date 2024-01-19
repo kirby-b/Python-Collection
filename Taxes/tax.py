@@ -11,19 +11,28 @@ def main():
             state_percent = input("Invalid state tax. Please input a plain number between 1-100. (Example: 69) \n")
         else:
             break
-    gross = money
-    net = money - pretax
+    gross = int(money)
+    net = int(money) - int(pretax)
     fed = income_tax(net)
     state = state_tax(net , state_percent)
+    medi = medicare(gross)
+    social_sec = social_security(gross)
     
-def income_tax(money):
+    total_taxes = (fed + state) + (medi + social_sec)
+    net = net - total_taxes
 
-def state_tax(money, state_percent):
+    print("Calculations done!\n Federal:{fed:.2f}\n State:{state:.2f}\n Medicare:{medi:.2f}\n Social Security:{social_sec:.2f}\nFor the month you will pay {total_taxes:.2f} in taxes. Your net pay(before after tax deductions) is {net:.2f}.")
+
+def income_tax(money: int):
+
+def state_tax(money: int, state_percent: int):
     return money * (state_percent/100)
 
-def medicare(money):
+def medicare(money: int):
+    return money * (1.45 / 100)
 
-def social_security(money):
-
+def social_security(money: int):
+    return money * (6.2 / 100)
+    
 if __name__ == "__main__":
     main()
