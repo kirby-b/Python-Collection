@@ -24,6 +24,7 @@ def main():
     print("Calculations done!\n Federal:{fed:.2f}\n State:{state:.2f}\n Medicare:{medi:.2f}\n Social Security:{social_sec:.2f}\nFor the month you will pay {total_taxes:.2f} in taxes. Your net pay(before after tax deductions) is {net:.2f}.")
 
 def income_tax(money: int):
+    #Just have the user input the numbers need I guess
 
 def state_tax(money: int, state_percent: int):
     return money * (state_percent/100)
