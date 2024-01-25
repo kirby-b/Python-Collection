@@ -55,6 +55,9 @@ def income_tax(money: int):
         for x in tax_bracket_percents:
             percent = int(tax_bracket_percents[x])
             taxable = int(tax_bracket_nums[x])
+            if x == 6:
+                tax = tax + (money * (percent / 100))
+                break
             if(money > taxable):
                 tax = tax + (taxable * (percent / 100))
                 money = money - taxable
