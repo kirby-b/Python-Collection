@@ -9,7 +9,7 @@ def main():
             money = input("Invalid income. Please input a number and nothing else (Example: 100000) \n")
         if not(pretax.isnumeric()):
             pretax = input("Invalid pretax total. Please input a number and nothing else (Example: 100000) \n")
-        if not(state_percent.isnumeric()) or 1 > int(state_percent) > 100 :
+        if not(state_percent.isnumeric()) or 1 > float(state_percent) > 100 :
             state_percent = input("Invalid state tax. Please input a plain number between 1-100. (Example: 69) \n")
         else:
             break
@@ -31,34 +31,48 @@ def main():
 #Calculates federal tax
 def income_tax(money: int):
     #Gets federal tax numbers
-    print("To get your federal tax information so it can be calculated, refer to the IRS Federal Income Tax Withholding Methods documents. Then find the table for your payment period(weekly, monthly, etc.) which should be around page 57 and the row where your income falls between the A and B columns.")
-    e = input("What is the number in column E for your row:\n")
-    d = input("What is the percentage(as a plain number) that is in column D:\n")
-    c = input("What is the number in column C:\n")
-    #Input validation
-    while(True):
-        if not(e.isnumeric()):
-            e = input("Invalid number for column E. Please input a number and nothing else (Example: 1008) \n")
-        if not(c.isnumeric()):
-            c = input("Invalid number for column C. Please input a number and nothing else (Example: 44.6) \n")
-        if not(d.isnumeric()) or 1 > int(d) > 100 :
-            d = input("Invalid number for column D. Please input a plain number between 1-100. (Example: 12) \n")
-        else:
-            break
-    fed = (money - e) * d
-    fed = fed + c
-
+    tax = 0
+    tax_bracket_nums = {
+        "b1": 11000,
+        "b2": 44725,
+        "b3": 95375,
+        "b4": 182100,
+        "b5": 231250,
+        "b6": 578125,
+    }
+    tax_bracket_percents = {
+        "b1": 10,
+        "b2": 12,
+        "b3": 22,
+        "b4": 24,
+        "b5": 32,
+        "b6": 35,
+        "b7": 37
+    }
+    if(money < 11000):
+            tax = money * 0.10
+    else:
+        for x in tax_bracket_percents:
+            percent = int(tax_bracket_percents[x])
+            taxable = int(tax_bracket_nums[x])
+            if(money > taxable):
+                tax = tax + (taxable * (percent / 100))
+                money = money - taxable
+            elif(money < taxable):
+                tax = tax + (money * (percent / 100))
+                break
+    return int(tax)
 #Calculates state tax
 def state_tax(money: int, state_percent: int):
-    return money * (state_percent/100)
+    return int(money * (state_percent/100))
 
 #Calculates medicare
 def medicare(money: int):
-    return money * (1.45 / 100)
+    return int(money * (1.45 / 100))
 
 #Calculates social security
 def social_security(money: int):
-    return money * (6.2 / 100)
+    return int(money * (6.2 / 100))
     
 if __name__ == "__main__":
     main()
