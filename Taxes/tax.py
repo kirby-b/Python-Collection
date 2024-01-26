@@ -9,15 +9,18 @@ def main():
             money = input("Invalid income. Please input a number and nothing else (Example: 100000) \n")
         if not(pretax.isnumeric()):
             pretax = input("Invalid pretax total. Please input a number and nothing else (Example: 100000) \n")
-        if not(state_percent.isnumeric()) or 1 > float(state_percent) > 100 :
+        if not(state_percent.isnumeric()) and is_float(state_percent) == False or 0.50 > float(state_percent) > 100.00 :
             state_percent = input("Invalid state tax. Please input a plain number between 1-100. (Example: 69) \n")
         else:
             break
     #Variables for numbers and math
     gross = int(money)
     net = int(money) - int(pretax)
-    fed = income_tax(net)
-    state = state_tax(net , state_percent)
+    if net > 13500:
+        fed = income_tax(net - 13500)
+    else:
+        fed = 0
+    state = state_tax(net , float(state_percent))
     medi = medicare(gross)
     social_sec = social_security(gross)
 
@@ -26,10 +29,10 @@ def main():
     net = net - total_taxes
 
     #Prints your tax info
-    print("Calculations done!\n Federal:{fed:.2f}\n State:{state:.2f}\n Medicare:{medi:.2f}\n Social Security:{social_sec:.2f}\nFor the month you will pay {total_taxes:.2f} in taxes. Your net pay(before after tax deductions) is {net:.2f}.")
+    print(f"Calculations done!\n Federal:{fed:.2f}\n State:{state:.2f}\n Medicare:{medi:.2f}\n Social Security:{social_sec:.2f}\nFor the month you will pay {total_taxes:.2f} in taxes and deductions. Your net pay(before after tax deductions) is {net:.2f}.")
 
 #Calculates federal tax
-def income_tax(money: int):
+def income_tax(money):
     #Gets federal tax numbers
     tax = 0
     tax_bracket_nums = {
@@ -66,16 +69,23 @@ def income_tax(money: int):
                 break
     return int(tax)
 #Calculates state tax
-def state_tax(money: int, state_percent: int):
-    return int(money * (state_percent/100))
+def state_tax(money, state_percent):
+    return money * (state_percent / 100)
 
 #Calculates medicare
-def medicare(money: int):
-    return int(money * (1.45 / 100))
+def medicare(money):
+    return money * (1.45 / 100)
 
 #Calculates social security
-def social_security(money: int):
-    return int(money * (6.2 / 100))
+def social_security(money):
+    return money * (6.2 / 100)
     
+def is_float(string):
+    try:
+        float(string)
+        return True
+    except ValueError:
+        return False
+
 if __name__ == "__main__":
     main()
