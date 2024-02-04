@@ -21,4 +21,5 @@ jokes = ["If I got 50 cents for every failed math exam, I\'d have $6.30 now.","2
 def Jokefunc():
     print("\n"+ jokes[random.randrange(0,45)] + "\n")
 
-Jokefunc()
+if __name__ == "__main__":
+    Jokefunc()
