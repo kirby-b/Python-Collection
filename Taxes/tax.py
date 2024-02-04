@@ -88,5 +88,5 @@ class Tax:
         except ValueError:
             return False
     
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    Tax.main()
