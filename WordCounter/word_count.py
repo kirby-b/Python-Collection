@@ -15,4 +15,5 @@ def word_count(word_string: str):
             x +=1
     
     print("This sentence contains " + str(len(countable)) + " words")
-main()
+if __name__ == "__main__":
+    main()
