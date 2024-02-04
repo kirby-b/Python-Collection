@@ -1,6 +1,24 @@
 import random
 
 class Slots:
+    def main():
+        jackpot = 0
+        spins = 0
+        cash = input('Welcome to the Lucky Programmer Slots. How many dollars would you like to put in (1 dollar per spin)')
+        spins = int(cash)
+        while(True):
+            try:
+                while(spins >= 0):
+                    if(spins == 0):
+                        go = input("You are out of cash! \nWould you like to insert more money?")
+    
+                    print("Spinning slots")
+                    winnings()    
+                    spins -= 1
+            except(KeyboardInterrupt):
+                print("Thank you for playing. Come again and test your luck.")
+                break
+
     def winnings():
         win_or_no = random.randrange(0,10000000000)
         if (win_or_no == 77):
@@ -13,19 +31,6 @@ class Slots:
             print("JackPot")
         else:
             print("No luck")
-    jackpot = 0
-    spins = 0
-    cash = input('Welcome to the Lucky Programmer Slots. How many dollars would you like to put in (1 dollar per spin)')
-    spins = int(cash)
-    while(True):
-        try:
-            while(spins >= 0):
-                if(spins == 0):
-                    go = input("You are out of cash! \nWould you like to insert more money?")
 
-                print("Spinning slots")
-                winnings()    
-                spins -= 1
-        except(KeyboardInterrupt):
-            print("Thank you for playing. Come again and test your luck.")
-            break
+    if __name__ == "__main__":
+        main()
