@@ -9,4 +9,5 @@ def word_count(word_string: str):
     #Assumes there is one space per word except the last
     print(str(total_words))
 
-main()
+if __name__ == "__main__":
+    main()
