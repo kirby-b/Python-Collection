@@ -3,6 +3,37 @@ import random
 NUM_DIGITS = 3
 MAX_GUESS = 10
 
+def main():
+    print("I am thinking of a %s-digit number. Try to guess what it is." % (NUM_DIGITS))
+    print("The clues I give are...")
+    print("When I say:    That means:")
+    print(" NOPE        None of the digits is correct.")
+    print(" Cold        One digit is correct but in the wrong position.")
+    print(" Warm        One digit is correct and in the right position.")
+    #Tells the user what the clues mean
+    while True:
+        secretNum = getSecretNum()
+        print("I have generated a number. You have %s guesses to get it." % (MAX_GUESS))
+    
+        guessesTaken = 1
+        while guessesTaken <= MAX_GUESS:
+            guess = ""
+            while len(guess) != NUM_DIGITS or not isOnlyDigits(guess):
+                print("Guess #%s: " % (guessesTaken))
+                guess = input()
+    
+            print(getClues(guess, secretNum))
+            guessesTaken += 1
+    
+            if guess == secretNum:
+                break
+            if guessesTaken > MAX_GUESS:
+                print("You ran out of guesses. The answer was %s." % (secretNum))
+        #Checks to see if the user guessed the number and if they have run out of guesses
+        print("Do you want to play again? (yes or no)")
+        if not input().lower().startswith("y"):
+            break
+        
 def getSecretNum():
     # Returns a string of unique random digits that is NUM_DIGITS long.
     numbers = list(range(10))
@@ -40,33 +71,5 @@ def isOnlyDigits(num):
 
     return True
 
-
-print("I am thinking of a %s-digit number. Try to guess what it is." % (NUM_DIGITS))
-print("The clues I give are...")
-print("When I say:    That means:")
-print(" NOPE        None of the digits is correct.")
-print(" Cold        One digit is correct but in the wrong position.")
-print(" Warm        One digit is correct and in the right position.")
-#Tells the user what the clues mean
-while True:
-    secretNum = getSecretNum()
-    print("I have generated a number. You have %s guesses to get it." % (MAX_GUESS))
-
-    guessesTaken = 1
-    while guessesTaken <= MAX_GUESS:
-        guess = ""
-        while len(guess) != NUM_DIGITS or not isOnlyDigits(guess):
-            print("Guess #%s: " % (guessesTaken))
-            guess = input()
-
-        print(getClues(guess, secretNum))
-        guessesTaken += 1
-
-        if guess == secretNum:
-            break
-        if guessesTaken > MAX_GUESS:
-            print("You ran out of guesses. The answer was %s." % (secretNum))
-    #Checks to see if the user guessed the number and if they have run out of guesses
-    print("Do you want to play again? (yes or no)")
-    if not input().lower().startswith("y"):
-        break
+if __name__ == "__main__":
+    main()
