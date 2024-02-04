@@ -44,5 +44,6 @@ def RockPaperScissorfunc():
     if YesNo == "yes":
         print("Alright!")
         RockPaperScissorfunc()
-        
-RockPaperScissorfunc()
+
+if __name__ == "__main__":
+    RockPaperScissorfunc()
