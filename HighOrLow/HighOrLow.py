@@ -42,4 +42,5 @@ def highORlowfunc():
         highORlowfunc()
     #Figure out if the user wants to play again
 
-highORlowfunc()
+if __name__ == "__main__":
+    highORlowfunc()
