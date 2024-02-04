@@ -1,7 +1,17 @@
 SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()?,.<>\|~`ÁÉÍÓÚÝáéíóúý"
 MAX_KEY_SIZE = len(SYMBOLS)
 # Holds the number of characters in the symbols variable (maximum shift number)
-
+def main():
+    mode = getMode()
+    message = getMessage()
+    if mode[0] != "b":
+        key = getKey()
+        print("Your translated message is:")
+        print(getTranslatedMessage(mode, message, key))
+    else:
+        for key in range(1, MAX_KEY_SIZE + 1):
+            print(key, getTranslatedMessage("decrypt", message, key))
+            
 def getMode():
     while True:
         print("Do you wish to encrypt or decrypt or brute-force a message?")
@@ -46,13 +56,5 @@ def getTranslatedMessage(mode, message, key):
 
             translated += SYMBOLS[symbolIndex]
     return translated
-
-mode = getMode()
-message = getMessage()
-if mode[0] != "b":
-    key = getKey()
-    print("Your translated message is:")
-    print(getTranslatedMessage(mode, message, key))
-else:
-    for key in range(1, MAX_KEY_SIZE + 1):
-        print(key, getTranslatedMessage("decrypt", message, key))
+if __name__ == "__main__":
+    main()
