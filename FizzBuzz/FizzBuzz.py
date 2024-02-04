@@ -21,5 +21,5 @@ class FizzBuzz:
                 print("Buzz", end=" ")
             #Prints a phrase based on the current number being tested
     
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    FizzBuzz.main()
