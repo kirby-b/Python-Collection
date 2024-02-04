@@ -32,4 +32,5 @@ def coinNDice():
         print("Alright!")
         coinNDice()
     #Asking if the user want to go again
-coinNDice()
+if __name__ == "__main__":
+    coinNDice()
