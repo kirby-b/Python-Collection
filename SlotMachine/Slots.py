@@ -32,5 +32,5 @@ class Slots:
         else:
             print("No luck")
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    Slots.main()
