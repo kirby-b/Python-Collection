@@ -12,7 +12,7 @@ while ans != "simple" and ans != "s" and ans != "crazy" and ans != "c":
     #Checks if input is valid
 
 if ans == "simple" or ans == "s":
-    MadLibs.SimpleMadLibModeFunc()
+    MadLibs.simple_mad_lib_mode_func()
 if ans == "crazy" or ans == "c":
-    MadLibs.CrazyMadLibModeFunc()
+    MadLibs.crazy_mad_lib_mode_func()
 #Prints the Madlib based on type from a function in the MadLib class
