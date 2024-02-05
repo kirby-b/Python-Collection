@@ -1,7 +1,7 @@
 import random
 import math
 
-class Pizzas: 
+class PizzaOrder: 
 
     def main():
         order = []
@@ -16,7 +16,7 @@ class Pizzas:
         i = 0
         print("You will not be asked for the rest of the pizza information. This includes a name, code, and how many to order. The price will be automatically generated.")
         while (i <= int(pizzas) - 1):#Loops for number of pizzas and gets informataion of each pizza
-            value = Pizzas.get_value()#Gets price
+            value = PizzaOrder.get_value()#Gets price
             order.append("Menu Price: $" + str(value)) #Appends price to order list
             unique_code = input("Please input a three letter/number menu code for pizza number " + str(i + 1) + ": ") #Gets unique code from user
             while(True): # Validates the code
@@ -38,7 +38,7 @@ class Pizzas:
             total = int(stock) * int(value) #Calculates the total price
             order.append("Total Inventory Price: $ " + str(total)) #Appends total price of each listing to order list
             i += 1
-        Pizzas.to_string(order, pizzas) #Prints using the to_string function
+        PizzaOrder.to_string(order, pizzas) #Prints using the to_string function
     def get_value():
         return random.randrange(10,20)#Gets a random number for pizza price
         
@@ -51,5 +51,5 @@ class Pizzas:
             start += (y + 1)
             print("\n")
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    PizzaOrder.main()
