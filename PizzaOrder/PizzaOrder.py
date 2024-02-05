@@ -16,16 +16,16 @@ class Pizzas:
         i = 0
         print("You will not be asked for the rest of the pizza information. This includes a name, code, and how many to order. The price will be automatically generated.")
         while (i <= int(pizzas) - 1):#Loops for number of pizzas and gets informataion of each pizza
-            value = getValue()#Gets price
+            value = Pizzas.get_value()#Gets price
             order.append("Menu Price: $" + str(value)) #Appends price to order list
-            uniqueCode = input("Please input a three letter/number menu code for pizza number " + str(i + 1) + ": ") #Gets unique code from user
+            unique_code = input("Please input a three letter/number menu code for pizza number " + str(i + 1) + ": ") #Gets unique code from user
             while(True): # Validates the code
-                if len(uniqueCode) != 3:
-                    uniqueCode = input("Invalid code. Please input a 3 letter/number code: ")
+                if len(unique_code) != 3:
+                    unique_code = input("Invalid code. Please input a 3 letter/number code: ")
                 else:
                     break
-            print("You entered: " + str(uniqueCode)) 
-            order.append("Menu Code: " + str(uniqueCode)) #Appends code to order list
+            print("You entered: " + str(unique_code)) 
+            order.append("Menu Code: " + str(unique_code)) #Appends code to order list
             name = input("Please input the pizza name: ") #Gets pizza name
             order.append("Menu Name: " + str(name)) #Appends name to order list
             stock = input("Please input the amount of the " + str(name) + " pizza you want in the virtual storage freezer: ") #Gets amount of the type of pizza
@@ -38,11 +38,11 @@ class Pizzas:
             total = int(stock) * int(value) #Calculates the total price
             order.append("Total Inventory Price: $ " + str(total)) #Appends total price of each listing to order list
             i += 1
-        toString(order, pizzas) #Prints using the toString function
-    def getValue():
+        Pizzas.to_string(order, pizzas) #Prints using the to_string function
+    def get_value():
         return random.randrange(10,20)#Gets a random number for pizza price
         
-    def toString(order, pizzas):
+    def to_string(order, pizzas):
         print("Listed below is your current pizza inventory: ")
         start = 0
         for x in range(int(pizzas)):#Prints out the contents of an array for the virtual pizza inventory
