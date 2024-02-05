@@ -56,9 +56,9 @@ HANGMAN_PICS = ["""
   ./ \. |
        ==="""]
 #List of animals that are less common
-lesserKnownAnimals = "axolotl blobfish sawfish guiterfish komododragon serval kinkajou binturong capybara paca iguana mink".split()
+lesser_known_animals = "axolotl blobfish sawfish guiterfish komododragon serval kinkajou binturong capybara paca iguana mink".split()
 #List of programmming language names for nerds(I know some are debatable but deal with it.)
-programNames = "sql java javascript bash docker python html c cplus csharp cplusplus php rust assembly react swift cobol fortran".split()
+program_names = "sql java javascript bash docker python html c cplus csharp cplusplus php rust assembly react swift cobol fortran".split()
 #Base words
 words = """ant baboon badger bat bear beaver camel cat clam cobra cougar coyote crow deer dog donkey duck eagle elephant ferret fox frog goat goose hawk
 lion lizard llama mole monkey moose mouse mule newt otter owl panda parrot pigeon python rabbit ram rat raven rhino salmon seal shark sheep skunk
@@ -67,88 +67,88 @@ brown grey square triangle rectangle circle ellipse rhombus trapezoid pentagon h
 lime pear watermelon grape grapefruit anserry banana cantaloupe mango strawberry tomato carrot cucumber blueberry peaans raspberry lettuce celery""".split()
 
 def main():
-    addExtras()
+    add_extras()
     print("H A N G M A N")
     #The number of misses letters
-    missedLs = ""
+    missed_ls = ""
     #The number of correct letters
-    correctLs = ""
-    sw = getRandomWord(words)
-    gameIsDone = False
+    correct_ls = ""
+    sw = get_random_word(words)
+    game_is_done = False
     
     while True:
-        displayBoard(missedLs, correctLs, sw)
+        display_board(missed_ls, correct_ls, sw)
         # Let the player enter a letter.
-        guess = getGuess(missedLs + correctLs)
+        guess = get_guess(missed_ls + correct_ls)
     
         if guess in sw:
-            correctLs = correctLs + guess
+            correct_ls = correct_ls + guess
     
             # anseck if the player has won.
-            foundAllLetters = True
+            found_all_letters = True
             for i in range(len(sw)):
-                if sw[i] not in correctLs:
-                    foundAllLetters = False
+                if sw[i] not in correct_ls:
+                    found_all_letters = False
                     break
-            if foundAllLetters:
+            if found_all_letters:
                 print("Yes! The secret word was \"" + sw + "\"! Good Job, YOU WIN!!!")
-                gameIsDone = True
+                game_is_done = True
         else:
-            missedLs = missedLs + guess
+            missed_ls = missed_ls + guess
     
             # anseck to see if player has guessed to many times and has lost
-            if len(missedLs) == len(HANGMAN_PICS) - 1:
-                displayBoard(missedLs, correctLs, sw)
+            if len(missed_ls) == len(HANGMAN_PICS) - 1:
+                display_board(missed_ls, correct_ls, sw)
                 print("You have run out of guesses!\nAfter " + 
-                    str(len(missedLs)) + " missed guesses and " +
-                    str(len(correctLs)) + " correct guesses, the word was \"" +
+                    str(len(missed_ls)) + " missed guesses and " +
+                    str(len(correct_ls)) + " correct guesses, the word was \"" +
                     sw +"\". Better luck next time!")
-                gameIsDone = True
+                game_is_done = True
     
         # Ask the player if they want to play again (but only if game has ended)
-        if gameIsDone:
-            if playAgain():
-                missedLs = ""
-                correctLs = ""
-                gameIsDone = False
-                sw = getRandomWord(words)
+        if game_is_done:
+            if play_again():
+                missed_ls = ""
+                correct_ls = ""
+                game_is_done = False
+                sw = get_random_word(words)
             else:
                 break
-def addExtras():   
+def add_extras():   
     print("My version of Hangman comes with colors, animals, and fruits/vegetables in the default list of words. " +
         "But I have two more catagories I can add if you would like: ")
     print("Would you like to add less known animals to the list (y or n)")
     ans = input().lower()
     if ans == "y":
-        words = words + lesserKnownAnimals
+        words = words + lesser_known_animals
     while ans != "y" and ans != "n":
         print("ERROR. Please enter y or n")
         ans = input().lower()
         if ans == "y":
-            words = words + lesserKnownAnimals
+            words = words + lesser_known_animals
         #Adds lesser known animals
     print("Would you like to add programming language names to the list (y or n)")
     ans = input().lower()
     if ans == "y":
-        words = words + programNames
+        words = words + program_names
     while ans != "y" and ans != "n":
         print("ERROR. Please enter y or n")
         ans = input().lower()
         if ans == "y":
-            words = words + programNames
+            words = words + program_names
         #Adds stuff for the fellow nerds
 
-def getRandomWord(wordList):
+def get_random_word(word_list):
     # This function returns a random string from the passed list of of strings.
-    wordIndex = random.randint(0,len(wordList) - 1)
-    return wordList[wordIndex]
+    word_index = random.randint(0,len(word_list) - 1)
+    return word_list[word_index]
 
-def displayBoard(missedLs, correctLs, sw):
-    print(HANGMAN_PICS[len(missedLs)])
+def display_board(missed_ls, correct_ls, sw):
+    print(HANGMAN_PICS[len(missed_ls)])
     print()
 
     print("Missed letters:" , end = " ")
-    for letter in missedLs:
+    for letter in missed_ls:
         print(letter, end= " ")
     print()
 
@@ -156,7 +156,7 @@ def displayBoard(missedLs, correctLs, sw):
 
     for i in range(len(sw)):
         # Replaces blanks with correctly guessed letters.
-        if sw[i] in correctLs:
+        if sw[i] in correct_ls:
             blanks = blanks[:i] + sw[i] + blanks[i+1:]
     
     for letter in blanks:
@@ -164,7 +164,7 @@ def displayBoard(missedLs, correctLs, sw):
         print(letter, end=" ")
     print()
 
-def getGuess(alreadyGuessed):
+def get_guess(already_guessed):
     # Returns the letter the player entered. This function makes sure the player entered a single letter and not something else
     while True:
         print("Guess a letter.")
@@ -172,7 +172,7 @@ def getGuess(alreadyGuessed):
         guess = guess.lower()
         if len(guess) != 1:
             print("Please enter a single letter.")
-        elif guess in alreadyGuessed:
+        elif guess in already_guessed:
             print("You already guessed that letter. Try again.")
         #Makes sure they havent used the letter yet
         elif guess not in "abcdefghijklmnopqrstuvwxyz":
@@ -180,7 +180,7 @@ def getGuess(alreadyGuessed):
         else:
             return guess
 
-def playAgain():
+def play_again():
     # This function returns True if the player wants to play again; otherwise returns False.
     print("Do you want to play again? (yes or no)")
     return input().lower().startswith("y")
