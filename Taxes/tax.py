@@ -10,7 +10,7 @@ class Tax:
                 money = input("Invalid income. Please input a number and nothing else (Example: 100000) \n")
             if not(pretax.isnumeric()):
                 pretax = input("Invalid pretax total. Please input a number and nothing else (Example: 100000) \n")
-            if not(state_percent.isnumeric()) and is_float(state_percent) == False or 0.50 > float(state_percent) > 100.00 :
+            if not(state_percent.isnumeric()) and isinstance(state_percent, float) == False or 0.50 > float(state_percent) > 100.00 :
                 state_percent = input("Invalid state tax. Please input a plain number between 1-100. (Example: 69) \n")
             else:
                 break
@@ -18,12 +18,12 @@ class Tax:
         gross = int(money)
         net = int(money) - int(pretax)
         if net > 13500:
-            fed = income_tax(net - 13500)
+            fed = Tax.income_tax(net - 13500)
         else:
             fed = 0
-        state = state_tax(net , float(state_percent))
-        medi = medicare(gross)
-        social_sec = social_security(gross)
+        state = Tax.state_tax(net , float(state_percent))
+        medi = Tax.medicare(gross)
+        social_sec = Tax.social_security(gross)
     
         #Final calculations
         total_taxes = (fed + state) + (medi + social_sec)
