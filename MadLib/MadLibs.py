@@ -1,7 +1,7 @@
 class MadLibs:
     
     #Normal MadLibs
-    def SimpleMadLibModeFunc():
+    def simple_mad_lib_mode_func():
         import random
         print("Welcome To MadLib. I will give you a prompt and then ask for three inputs(they will be inserted at the capitalized words in parentheses).\n")
         s1 = "___"
@@ -53,21 +53,21 @@ class MadLibs:
 
         print("I hope that was what you wanted")
         print ("Would you like to do another")
-        YesNo = str.lower(str.strip(input()))
+        yes_no = str.lower(str.strip(input()))
             #Figures out if you want to paly again
-        while YesNo != "yes" and YesNo != "no" and YesNo != "n" and YesNo != "y":
+        while yes_no != "yes" and yes_no != "no" and yes_no != "n" and yes_no != "y":
             print("Error, try again")
-            YesNo = str.lower(str.strip(input()))
+            yes_no = str.lower(str.strip(input()))
 
-        if YesNo == "no" or YesNo == "n":
+        if yes_no == "no" or yes_no == "n":
             print("Goodbye!")
 
-        if YesNo == "yes" or YesNo == "y":
+        if yes_no == "yes" or yes_no == "y":
             print("Alright!")
-            MadLibs.SimpleMadLibModeFunc()
+            MadLibs.simple_mad_lib_mode_func()
 
     #Prints the CrazyMadLib
-    def CrazyMadLibModeFunc():
+    def crazy_mad_lib_mode_func():
         print("Welcome to Crazy MadLib. I will ask you for three words and then put them in every prompt in the program.")
         s1 = input("Word 1:")
         s2 = input("Word 2:")
@@ -83,14 +83,14 @@ class MadLibs:
         print("The best way to stay "+ s1 + " is to " + s2 + " " + s3 + " everyday.")
         print("I "+ s1 + " my " + s2 + " everyday like a " + s3 + ".")  
         print ("Would you like to do another")
-        YesNo = str.lower(str.strip(input()))
-        while YesNo != "yes" and YesNo != "no" and YesNo != "n" and YesNo != "y":
+        yes_no = str.lower(str.strip(input()))
+        while yes_no != "yes" and yes_no != "no" and yes_no != "n" and yes_no != "y":
             print("Error, try again")
-            YesNo = str.lower(str.strip(input()))
+            yes_no = str.lower(str.strip(input()))
 
-        if YesNo == "no" or YesNo == "n":
+        if yes_no == "no" or yes_no == "n":
             print("Goodbye!")
 
-        if YesNo == "yes" or YesNo == "y":
+        if yes_no == "yes" or yes_no == "y":
             print("Alright!")
-            MadLibs.CrazyMadLibModeFunc()
+            MadLibs.crazy_mad_lib_mode_func()
