@@ -2,17 +2,17 @@ SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&
 MAX_KEY_SIZE = len(SYMBOLS)
 # Holds the number of characters in the symbols variable (maximum shift number)
 def main():
-    mode = getMode()
-    message = getMessage()
+    mode = get_mode()
+    message = get_message()
     if mode[0] != "b":
-        key = getKey()
+        key = get_key()
         print("Your translated message is:")
-        print(getTranslatedMessage(mode, message, key))
+        print(get_translated_message(mode, message, key))
     else:
         for key in range(1, MAX_KEY_SIZE + 1):
-            print(key, getTranslatedMessage("decrypt", message, key))
+            print(key, get_translated_message("decrypt", message, key))
             
-def getMode():
+def get_mode():
     while True:
         print("Do you wish to encrypt or decrypt or brute-force a message?")
         mode = input().lower()
@@ -21,11 +21,11 @@ def getMode():
         else:
             print('Enter either "encrypt" or "e" or "decrypt" or "d".')
 
-def getMessage():
+def get_message():
     print("Enter your message:")
     return input()
 
-def getKey():
+def get_key():
     key = 0
     while True:
         print("Enter the key number (1-%s)" % (MAX_KEY_SIZE))
@@ -34,27 +34,27 @@ def getKey():
             return key
     #Gets the number of characters the message with get shifted by
 
-def getTranslatedMessage(mode, message, key):
+def get_translated_message(mode, message, key):
     if mode[0] == "d":
         key = -key
     translated = ""
 
     for symbol in message:
-        symbolIndex = SYMBOLS.find(symbol)
-        if symbolIndex == -1: 
+        symbol_index = SYMBOLS.find(symbol)
+        if symbol_index == -1: 
             # Symbol not found in SYMBOLS.
             # Just add this symbol without any change.
             translated += symbol
         else:
             # Encrypt or decrypt.
-            symbolIndex += key
+            symbol_index += key
 
-            if symbolIndex >= len(SYMBOLS):
-                symbolIndex -= len(SYMBOLS)
-            elif symbolIndex < 0:
-                symbolIndex += len(SYMBOLS)
+            if symbol_index >= len(SYMBOLS):
+                symbol_index -= len(SYMBOLS)
+            elif symbol_index < 0:
+                symbol_index += len(SYMBOLS)
 
-            translated += SYMBOLS[symbolIndex]
+            translated += SYMBOLS[symbol_index]
     return translated
 if __name__ == "__main__":
     main()
