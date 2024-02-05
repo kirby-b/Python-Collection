@@ -10,10 +10,12 @@ class Slots:
             try:
                 while(spins >= 0):
                     if(spins == 0):
-                        go = input("You are out of cash! \nWould you like to insert more money?")
-    
+                        cash = input("You are out of cash! \nPlease insert more money to continue!")
+                        while cash.isnumeric() == False:
+                            cash = input("Invalid input! Please try again:")
+                        spins = int(cash)
                     print("Spinning slots")
-                    winnings()    
+                    Slots.winnings()    
                     spins -= 1
             except(KeyboardInterrupt):
                 print("Thank you for playing. Come again and test your luck.")
