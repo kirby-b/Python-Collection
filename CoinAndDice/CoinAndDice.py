@@ -1,6 +1,6 @@
 import random
 
-def coinNDice():
+def coin_n_dice():
     print("Coin (two sides) or Dice (pick how many sides)")
     choice = str.lower(str.strip(input()))
     if choice == "dice":
@@ -30,7 +30,7 @@ def coinNDice():
 
     if YesNo == "yes":
         print("Alright!")
-        coinNDice()
+        coin_n_dice()
     #Asking if the user want to go again
 if __name__ == "__main__":
-    coinNDice()
+    coin_n_dice()
