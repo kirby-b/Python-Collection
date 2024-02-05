@@ -14,6 +14,7 @@ def main():
 def extract_name(website):
   start = website.find("://", beg=0, end=len(website))
   end = ""
-  dot_what = website.search("\..+.*" , txt).span()
+  dot_what = re.search("\..+.*" , website).span()
   end = dot_what[-1]
-  return website.slice(start, end)
+  s = slice(start, end)
+  return website[s]
