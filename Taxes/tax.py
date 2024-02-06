@@ -42,7 +42,7 @@ class Tax:
             "b3": 95375,
             "b4": 182100,
             "b5": 231250,
-            "b6": 578125,
+            "b6": 578125
         }
         tax_bracket_percents = {
             "b1": 10,
@@ -80,13 +80,6 @@ class Tax:
     #Calculates social security
     def social_security(money):
         return money * (6.2 / 100)
-        
-    def is_float(string):
-        try:
-            float(string)
-            return True
-        except ValueError:
-            return False
     
 if __name__ == "__main__":
     Tax.main()
