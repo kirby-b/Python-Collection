@@ -1,5 +1,6 @@
 # Mini-Python-Projects
 An assortment of python projects, mainly games, that I have made in python. Some of them are projects I did as part of learning books or tutorials, but all of them have some form of original modification.
+
 # How to use programs
 You have two way to do this depending on what you intend on doing
 
@@ -18,3 +19,7 @@ You have two way to do this depending on what you intend on doing
 -Type python followed by the file name EX: python hangman.py
 
 -Hit enter and have fun
+
+# Feel let me know your thoughts
+
+Have an idea you want me to add, feel free to create an issue.
