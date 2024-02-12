@@ -3,10 +3,7 @@ import random
 
 
 def rock_paper_scissor_func():
-    print("Rock")
-    print("Paper")
-    print("Scissors")
-    print("Shoot")
+    print("Rock \nPaper \nScissors \nShoot")
 
     RPS = random.randrange(1,4)
     player_RPS = str.lower(str.strip(input()))
@@ -30,7 +27,7 @@ def rock_paper_scissor_func():
         print("Tie")
     elif player_RPS == "gun":
         print("Cheater")
-    #Determines output
+    #Determines who wins
     print ("Would you like to play again")
     yes_no = str.lower(str.strip(input()))
 
