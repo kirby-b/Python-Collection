@@ -5,6 +5,7 @@ def main():
   website2 = "https://www.w3schools.com/js/default.asp"
   website3 = "https://orteil.dashnet.org/cookieclicker/"
   website4 = "https://github.com/kirby-b"
+  #Website names for slicing
   
   print("This program takes a sample website like this:")
   print(website1)
@@ -20,10 +21,13 @@ def main():
 def extract_name(website):
   temp = re.search(".+://" , website).span()
   start = temp[-1]
+  #Gets the start of the website name
   end = ""
   temp = re.search("\..+(/{1})|\..+" , website).span()
   end = temp[-1]
+  #Gets the end of the website name
   s = slice(start, end)
+  #Gets the name by slicing from start to end
   website = website[s]
   regexIsDumb = re.split("/", website) # I had to do this because I couldnt figure out how to get the regex to stop at the first "/" and not the last
   website = regexIsDumb[0]
