@@ -3,8 +3,8 @@
 
 # From my tax.py program. Replaced by an isinstance
 def is_float(string):
-        try:
-            float(string)
-            return True
-        except ValueError:
-            return False
+   try:
+      float(string)#Turn the input into a float. If it is not a number or float, it will throw an exception
+      return True
+   except ValueError: #On exception it will return false
+      return False
