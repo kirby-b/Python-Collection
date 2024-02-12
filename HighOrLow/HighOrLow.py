@@ -8,7 +8,7 @@ def high_or_low_func():
     print("Will the next number be Higher or Lower.")
     h_or_l = str.lower(str.strip(input()))
     #Holds the users answer
-    while h_or_l != "higher" and h_or_l != "lower" and h_or_l != "h" and h_or_l != "l":
+    while h_or_l not in ["higher", "h", "lower", "l"]:
         print("Error, try again. Please input higher or lower.")
         h_or_l = str.lower(str.strip(input()))
     #Asks if the user thinks the next number with be Higher or Lower
