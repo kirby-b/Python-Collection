@@ -31,11 +31,15 @@ dice_art = {
         "│  *   *  │",
         "│  *   *  │",
         "└─────────┘")
-}
+} #Dice art
 
 dice = []
-t = 0
-num_of_dice = int(input("How many dice do you want?: "))
+total = 0
+num_of_dice = input("How many dice do you want?: "))
+#Gets the number of dice
+while True:
+    if not num_of_dice.isnumeric():
+        num_of_dice = input("Invalid Input, please input an a whole number(1 2 3 4 5...)\n How many dice do you want?: "))
 
 for die in range(num_of_dice):
     dice.append(random.randint(1, 6))
@@ -52,5 +56,5 @@ for line in range(5):
     print()
 
 for die in dice:
-    t += die
-print(f"Total from dice: {t}")
+    total += die
+print(f"Total from dice: {total}")
