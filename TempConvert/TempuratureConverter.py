@@ -2,8 +2,8 @@ def main():
     temp = float(input("Enter the temperature: "))
     #Gets unit of temperature and its value. There was no reason to include kelvin, but I was bored.
     unit = input("Is this tempurature in Celsius, Fahrenheit, Kelvin (C/F/K):").lower()
-    while unit != "c" and unit != "f" and unit != "k":
-        unit = input("Please input a valid tempurature unit (C/F/K):").lower()
+    while unit not in ["celsius","c","fahrenheit","f","kelvin","k"]:
+        unit = input("Please input a valid tempurature unit (Celsius, Fahrenheit, Kelvin, C, F, K:").lower()
     
 def convert(unit, temp):
     if unit == "c":
