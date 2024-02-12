@@ -54,7 +54,8 @@ HANGMAN_PICS = ["""
     O   |
   ,/|\, |
   ./ \. |
-       ==="""]
+       ==="""] # Hangman art
+
 #List of animals that are less common
 lesser_known_animals = "axolotl blobfish sawfish guiterfish komododragon serval kinkajou binturong capybara paca iguana mink".split()
 #List of programmming language names for nerds(I know some are debatable but deal with it.)
@@ -119,6 +120,7 @@ def add_extras():
         "But I have two more catagories I can add if you would like: ")
     print("Would you like to add less known animals to the list (y or n)")
     ans = input().lower()
+    # Gets input and formats it
     if ans == "y":
         words = words + lesser_known_animals
     while ans != "y" and ans != "n":
@@ -129,6 +131,7 @@ def add_extras():
         #Adds lesser known animals
     print("Would you like to add programming language names to the list (y or n)")
     ans = input().lower()
+    # Gets input and formats it
     if ans == "y":
         words = words + program_names
     while ans != "y" and ans != "n":
