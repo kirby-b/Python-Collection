@@ -1,15 +1,13 @@
 import random
 
-
-
 def rock_paper_scissor_func():
     print("Rock \nPaper \nScissors \nShoot")
 
     RPS = random.randrange(1,4)
-    player_RPS = str.lower(str.strip(input()))
-    while player_RPS != "rock" and player_RPS != "paper" and player_RPS != "scissors" and player_RPS != "gun":
+    player_RPS = lower(strip(input()))
+    while player_RPS not in["rock","paper","scissors","gun"]:
         print("Error, try again")
-        player_RPS = str.lower(str.strip(input()))
+        player_RPS = lower(strip(input()))
 
     if RPS == 1:
         print("Rock")
