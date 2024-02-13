@@ -57,7 +57,7 @@ def keep_score(winner):
         pass
     #Calculates the new scores
     
-    print(f"Score:\nPlayer Wins:{PLAYER_SCORE}\nComputer Wins:{COMPUTER_SCORE}\nTimes you tied:{TIES}\nTimes you cheated:{TIMES_CHEATED}")
+    print(f"Player Wins:{PLAYER_SCORE}\nComputer Wins:{COMPUTER_SCORE}\nTimes you tied:{TIES}\nTimes you cheated:{TIMES_CHEATED}")
     #Prints current scores
 
 if __name__ == "__main__":
