@@ -1,6 +1,7 @@
 import random
 
 def main():
+    print("Welcome to the virtual dice roller and coin flipper. To stop this program hit control + D")
     while(True):
         try:
             print("Coin (two sides) or Dice (pick how many sides)")
