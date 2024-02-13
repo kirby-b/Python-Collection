@@ -8,3 +8,8 @@ def is_float(string):
       return True
    except ValueError: #On exception it will return false
       return False
+
+# From a lot of my projects. Replaced by a while loop with a try catch, the catch watches for a KeyboardInterupt.
+print("Do you want to play again? (yes or no)")
+     if not input().lower().startswith("y"):
+         break
