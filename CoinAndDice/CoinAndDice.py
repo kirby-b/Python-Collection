@@ -1,28 +1,19 @@
 import random
 
 def main():
-    print("Coin (two sides) or Dice (pick how many sides)")
-    choice = str.lower(str.strip(input()))
-    if choice == "dice":
-        dice()
-    #Rolls a die with the input number of sides, for the input number of dice
-    if choice == "coin":
-        coin_flip()
-    #Flips a coin for the amount of times the user says to
-    print ("Would you like to go again")
-    YesNo = str.lower(str.strip(input()))
-        
-    while YesNo != "yes" and YesNo != "no":
-        print("Error, try again")
-        YesNo = str.lower(str.strip(input()))
-
-    if YesNo == "no":
-        print("Ok. Goodbye")
-
-    if YesNo == "yes":
-        print("Alright!")
-        coin_n_dice()
-    #Asking if the user want to go again
+    while(True):
+        try:
+            print("Coin (two sides) or Dice (pick how many sides)")
+            choice = str.lower(str.strip(input()))
+            if choice == "dice":
+                dice()
+            #Rolls a die with the input number of sides, for the input number of dice
+            if choice == "coin":
+                coin_flip()
+            #Flips a coin for the amount of times the user says to
+        except(KeyboardInterrupt):
+            print("Thank you for using the virtual dice roller and coin flipper.")
+            break
 
 def dice():
     sides = str.strip(input("How many sides do you want each die to have:"))
