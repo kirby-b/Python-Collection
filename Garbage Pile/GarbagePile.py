@@ -10,6 +10,8 @@ def is_float(string):
       return False
 
 # From a lot of my projects. Replaced by a while loop with a try catch, the catch watches for a KeyboardInterupt.
-print("Do you want to play again? (yes or no)")
-     if not input().lower().startswith("y"):
-         break
+while True:
+   #Code goes here
+   print("Do you want to play again? (yes or no)") #Happens when the game or whatever is done
+   if not input().lower().startswith("y"):
+      break
