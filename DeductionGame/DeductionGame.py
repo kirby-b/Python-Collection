@@ -2,6 +2,8 @@ import random
 
 NUM_DIGITS = 3
 MAX_GUESS = 10
+LOSES = 0
+PLAYER_SCORE = 0
 
 def main():
     print("I am thinking of a %s-digit number. Try to guess what it is." % (NUM_DIGITS))
@@ -12,26 +14,31 @@ def main():
     print(" Warm        One digit is correct and in the right position.")
     #Tells the user what the clues mean
     while True:
-        secret_num = get_secret_num()
-        print("I have generated a number. You have %s guesses to get it." % (MAX_GUESS))
-    
-        guesses_taken = 1
-        while guesses_taken <= MAX_GUESS:
-            guess = ""
-            while len(guess) != NUM_DIGITS or not is_only_digits(guess):
-                print("Guess #%s: " % (guesses_taken))
-                guess = input()
-    
-            print(get_clues(guess, secret_num))
-            guesses_taken += 1
-    
-            if guess == secret_num:
-                break
-            if guesses_taken > MAX_GUESS:
-                print("You ran out of guesses. The answer was %s." % (secret_num))
-        #Checks to see if the user guessed the number and if they have run out of guesses
-        print("Do you want to play again? (yes or no)")
-        if not input().lower().startswith("y"):
+        try:
+            secret_num = get_secret_num()
+            print("I have generated a number. You have %s guesses to get it." % (MAX_GUESS))
+        
+            guesses_taken = 1
+            while guesses_taken <= MAX_GUESS:
+                guess = ""
+                while len(guess) != NUM_DIGITS or not is_only_digits(guess):
+                    print("Guess #%s: " % (guesses_taken))
+                    guess = input()
+        
+                print(get_clues(guess, secret_num))
+                guesses_taken += 1
+        
+                if guess == secret_num:
+                    print("You guessed it. Good Job!")
+                    keep_score("w")
+                    break
+                if guesses_taken > MAX_GUESS:
+                    print("You ran out of guesses. The answer was %s." % (secret_num))
+                    keep_score("l")
+            #Checks to see if the user guessed the number and if they have run out of guesses
+        except(KeyboardInterrupt):
+            print("Thank you for playing. Here is your final score:")
+            keep_score("lolthisstringispointless")
             break
         
 def get_secret_num():
@@ -70,6 +77,17 @@ def is_only_digits(num):
             return False
 
     return True
+def keep_score(winner):
+    if winner == "w":
+        PLAYER_SCORE += 1
+    elif winner == "l":
+        LOSES += 1
+    else:
+        pass
+    #Calculates the new scores
+    
+    print(f"Games Won:{PLAYER_SCORE}\nGames Lost:{LOSES}")
+    #Prints current scores
 
 if __name__ == "__main__":
     main()
