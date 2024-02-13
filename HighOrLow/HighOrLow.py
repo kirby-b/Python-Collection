@@ -1,6 +1,7 @@
 import random
 
 def high_or_low_func():
+    print("Welcome to higher or lower. To stop the program please please control + D.")
     while(True):
         try:
             print("HIGHER or LOWER:")
