@@ -1,17 +1,17 @@
 import random
 
 def high_or_low_func():
-    print("Welcome to higher or lower. To stop the program please please control + D.")
+    print("Welcome to higher or lower. To stop the program please please control + C.")
     while(True):
         try:
             print("HIGHER or LOWER:")
             rando = random.randrange(1,11)
-            print ("The number is: "+rando)
+            print ("The number is: "+ str(rando))
             #Generates a random number and prints it. 
             print("Will the next number be Higher or Lower.")
             h_or_l = str.lower(str.strip(input()))
             #Holds the users answer
-            while h_or_l not in ["higher", "h", "lower", "l"]:
+            while h_or_l not in ["higher", "lower"]:
                 print("Error, try again. Please input higher or lower.")
                 h_or_l = str.lower(str.strip(input()))
             #Asks if the user thinks the next number with be Higher or Lower
@@ -30,9 +30,7 @@ def high_or_low_func():
               print ("Correct")
             else :
                 print ("Wrong, sorry")
-            print ("Would you like to play again")
-            yes_no = str.lower(str.strip(input()))
-            #Tells user if they were right or now
+            #Tells user if they were right or not
         except(KeyboardInterrupt):
             print("Thank you for playing")
             break
