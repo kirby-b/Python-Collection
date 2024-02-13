@@ -1,9 +1,9 @@
 import random
 #Global Variables for scores
-PLAYER_SCORE = 0
-COMPUTER_SCORE = 0
-TIMES_CHEATED = 0
-TIES = 0
+player_score = 0
+computer_score = 0
+times_cheated = 0
+ties = 0
 
 def rock_paper_scissor_func():
     while(True):
@@ -11,10 +11,10 @@ def rock_paper_scissor_func():
             print("Rock \nPaper \nScissors \nShoot")
         
             RPS = random.randrange(1,4)
-            player_RPS = lower(strip(input()))
+            player_RPS = str.lower(str.strip(input()))
             while player_RPS not in["rock","paper","scissors","gun"]:
                 print("Error, try again")
-                player_RPS = lower(strip(input()))
+                player_RPS = str.lower(str.strip(input()))
             #Validates input
         
             if RPS == 1:
@@ -44,20 +44,24 @@ def rock_paper_scissor_func():
             break
         #If the user uses a keyboard interupt, it will end the program with this catch
 def keep_score(winner):
+    global times_cheated
+    global player_score 
+    global computer_score
+    global ties 
     if winner == "p":
-        PLAYER_SCORE += 1
-    elif winner == "c":
-        COMPUTER_SCORE += 1
+        player_score += 1
+    elif winner == "c": 
+        computer_score += 1
     elif winner == "t":
-        TIES += 1
+        ties += 1
     elif winner == "cheat":
-        PLAYER_SCORE += 1
-        TIMES_CHEATED += 1
+        player_score += 1
+        times_cheated += 1
     else:
         pass
     #Calculates the new scores
     
-    print(f"Player Wins:{PLAYER_SCORE}\nComputer Wins:{COMPUTER_SCORE}\nTimes you tied:{TIES}\nTimes you cheated:{TIMES_CHEATED}")
+    print(f"Player Wins:{player_score}\nComputer Wins:{computer_score}\nTimes you tied:{ties}\nTimes you cheated:{times_cheated}")
     #Prints current scores
 
 if __name__ == "__main__":
