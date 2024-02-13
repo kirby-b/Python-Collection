@@ -1,5 +1,9 @@
 import random
 
+PLAYER_SCORE = 0
+COMPUTER_SCORE = 0
+TIES = 0
+
 def main():
     print("Welcome to Tic-Tac-Toe!")
     
@@ -21,11 +25,13 @@ def main():
                 if is_winner(the_board, player_letter):
                     draw_board(the_board)
                     print("Hooray! You have won the game!")
+                    keep_score("p")
                     game_is_playing = False
                 else:
                     if is_board_full(the_board):
                         draw_board(the_board)
                         print("The game is a tie!")
+                        keep_score("t")
                         break
                     else:
                         turn = "computer"
@@ -37,16 +43,19 @@ def main():
                 if is_winner(the_board, computer_letter):
                     draw_board(the_board)
                     print("The computer has beaten you! You lose.")
+                    keep_score("c")
                     game_is_playing = False
                 else:
                     if is_board_full(the_board):
                         draw_board(the_board)
                         print("The game is a tie!")
+                        keep_score("t")
                         break
                     else:
                         turn = "player"
-        print("Do you want to play again? (yes or no)")
-        if not input().lower().startswith("y"):
+        except(KeyboardInterrupt):
+            print("Thank you for playing. Here is your final score:")
+            keep_score("donttrustyoutuberswhodontshowproof")
             break
 
 def draw_board(b):
@@ -170,6 +179,20 @@ def is_board_full(b):
         if is_space_free(b, i):
             return False
     return True
+    
+def keep_score(winner):
+    if winner == "p":
+        PLAYER_SCORE += 1
+    elif winner == "c":
+        COMPUTER_SCORE += 1
+    elif winner == "t"
+        TIES += 1
+    else:
+        pass
+    #Calculates the new scores
+    
+    print(f"Player Score:{PLAYER_SCORE}\nComputer Score:{LOSES}")
+    #Prints current scores
 
 if __name__ == "__main__":
     main()
