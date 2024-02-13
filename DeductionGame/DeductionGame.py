@@ -2,10 +2,12 @@ import random
 
 NUM_DIGITS = 3
 MAX_GUESS = 10
-LOSES = 0
-PLAYER_SCORE = 0
+#Global Variables for scores
+loses = 0
+player_score = 0
 
 def main():
+    print("Welcome to my deduction game. To stop this program hit control + C")
     print("I am thinking of a %s-digit number. Try to guess what it is." % (NUM_DIGITS))
     print("The clues I give are...")
     print("When I say:    That means:")
@@ -78,15 +80,17 @@ def is_only_digits(num):
 
     return True
 def keep_score(winner):
+    global loses
+    global player_score
     if winner == "w":
-        PLAYER_SCORE += 1
+        player_score += 1
     elif winner == "l":
-        LOSES += 1
+        loses += 1
     else:
         pass
     #Calculates the new scores
     
-    print(f"Games Won:{PLAYER_SCORE}\nGames Lost:{LOSES}")
+    print(f"Games Won:{player_score}\nGames Lost:{loses}")
     #Prints current scores
 
 if __name__ == "__main__":
