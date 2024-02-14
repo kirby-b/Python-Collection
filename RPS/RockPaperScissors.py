@@ -8,7 +8,7 @@ ties = 0
 def rock_paper_scissor_func():
     while(True):
         try:
-            print("Rock \nPaper \nScissors \nShoot")
+            print("Rock \nPaper \nScissors \nShoot\n")
         
             RPS = random.randrange(1,4)
             player_RPS = str.lower(str.strip(input()))
