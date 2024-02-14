@@ -57,9 +57,10 @@ HANGMAN_PICS = ["""
        ==="""] # Hangman art
 
 #List of animals that are less common
-lesser_known_animals = "axolotl blobfish sawfish guiterfish komododragon serval kinkajou binturong capybara paca iguana mink".split()
+lesser_known_animals = "axolotl blobfish sawfish guitarfish komododragon serval kinkajou binturong capybara paca iguana mink".split()
 #List of programmming language names for nerds(I know some are debatable but deal with it.)
-program_names = "sql java javascript bash docker python html c cplus csharp cplusplus php rust assembly react swift cobol fortran".split()
+program_names = """mysql java javascript bash docker python html c csharp cplusplus php rust assembly react swift cobol fortran go ruby perl laravel node git 
+lua shell typescipt kotlin fsharp assembly visualbasic gdscript matlab clojure css dotnet postgresql""".split()
 #Base words
 words = """ant baboon badger bat bear beaver camel cat clam cobra cougar coyote crow deer dog donkey duck eagle elephant ferret fox frog goat goose hawk
 lion lizard llama mole monkey moose mouse mule newt otter owl panda parrot pigeon python rabbit ram rat raven rhino salmon seal shark sheep skunk
