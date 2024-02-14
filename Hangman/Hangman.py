@@ -1,4 +1,8 @@
 import random
+
+loses = 0
+player_score = 0
+
 HANGMAN_PICS = ["""
     +---+
         |
@@ -94,6 +98,7 @@ def main():
                     break
             if found_all_letters:
                 print("Yes! The secret word was \"" + sw + "\"! Good Job, YOU WIN!!!")
+                keep_score("w")
                 game_is_done = True
         else:
             missed_ls = missed_ls + guess
@@ -105,6 +110,7 @@ def main():
                     str(len(missed_ls)) + " missed guesses and " +
                     str(len(correct_ls)) + " correct guesses, the word was \"" +
                     sw +"\". Better luck next time!")
+                keep_score("l")
                 game_is_done = True
     
         # Ask the player if they want to play again (but only if game has ended)
@@ -188,6 +194,20 @@ def play_again():
     # This function returns True if the player wants to play again; otherwise returns False.
     print("Do you want to play again? (yes or no)")
     return input().lower().startswith("y")
+
+def keep_score(winner):
+    global loses
+    global player_score
+    if winner == "w":
+        player_score += 1
+    elif winner == "l":
+        loses += 1
+    else:
+        pass
+    #Calculates the new scores
+    
+    print(f"Games Won:{player_score}\nGames Lost:{loses}")
+    #Prints current scores
 
 if __name__ == "__main__":
     main()
