@@ -11,7 +11,7 @@ def main():
     print("I am thinking of a %s-digit number. Try to guess what it is." % (NUM_DIGITS))
     print("The clues I give are...")
     print("When I say:    That means:")
-    print(" NOPE        None of the digits is correct.")
+    print(" NOPE        None of the digits are correct.")
     print(" Cold        One digit is correct but in the wrong position.")
     print(" Warm        One digit is correct and in the right position.")
     #Tells the user what the clues mean
