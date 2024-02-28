@@ -30,13 +30,13 @@ def main():
     net = net - total_taxes
 
     # Prints your tax info
-    print(f"""Calculations done!
-    \n Federal:{fed:.2f}
-    \n State:{state:.2f}
-    \n Medicare:{medi:.2f}
-    \n Social Security:{social_sec:.2f}
-    \nFor the month you will pay {total_taxes:.2f} in taxes and deductions.
-    \nYour net pay(before after tax deductions) is {net:.2f}.""")
+    print("Calculations done!"
+          + f"\n Federal:{fed:.2f}"
+          + f"\n State:{state:.2f}"
+          + f"\n Medicare:{medi:.2f}"
+          + f"\n Social Security:{social_sec:.2f}"
+          + f"\nFor the month you will pay {total_taxes:.2f} in taxes and deductions."
+          + f"\nYour net pay(before after tax deductions) is {net:.2f}.")
 
 
 # Calculates federal tax
