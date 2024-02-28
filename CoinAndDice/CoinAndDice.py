@@ -5,14 +5,12 @@ def main():
     print("Welcome to the virtual dice roller and coin flipper. To stop this program hit control + C")
     while True:
         try:
-            choice = str.lower(str.strip(input("""Do you want a Coin (two sides) or Dice (pick).
-             Input Coin, Dice, C, or D:""")))
+            choice = str.lower(str.strip(input("Do you want a Coin (two sides) or Dice (pick). Input Coin, Dice, C, or D:")))
             while True:
                 if validate(choice):
                     break
                 else:
-                    choice = str.lower(str.strip(input("""Invalid Input. Do you want a Coin (two sides) or Dice (pick).
-                                                       Input Coin, Dice, C, or D:""")))
+                    choice = str.lower(str.strip(input("Invalid Input. Do you want a Coin (two sides) or Dice (pick). Input Coin, Dice, C, or D:")))
             
             if choice == "dice" or choice == "d":
                 dice()
