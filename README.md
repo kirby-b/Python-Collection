@@ -1,5 +1,5 @@
 # Mini Python Projects
-An assortment of python projects, mainly games, that I have made in python. Some of them are projects I did as part of learning books or tutorials, but all of them have some form of personal modification.
+An assortment of python programs. I did most as part of learning books, tutorials, tests, challenges, or boredom.
 
 # How to use programs
 You have two way to do this depending on what you intend on doing
