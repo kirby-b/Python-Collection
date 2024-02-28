@@ -2,13 +2,13 @@
 An assortment of python programs. I did most as part of learning books, tutorials, tests, challenges, or boredom.
 
 # How to use programs
-You have two way to do this depending on what you intend on doing
+You have two-way to do this depending on what you intend on doing
 
 ***Do this if you want to edit them and add your own features or flair***
    
 -Download the zip, unzip it, and open files in VSCode, Pycharm, IDLE, or another python capable code editor. From here you can run the code from the editor and edit what ever you want to customize.
 
-***Do this if you dont want to edit them***
+***Do this if you don't want to edit them***
    
 -Make sure you have python downloaded
 
