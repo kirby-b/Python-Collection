@@ -1,6 +1,8 @@
-SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()?,.<>\|~`ÁÉÍÓÚÝáéíóúý"
+SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()?,.<>|~`ÁÉÍÓÚÝáéíóúý"
 MAX_KEY_SIZE = len(SYMBOLS)
 # Holds the number of characters in the symbols variable (maximum shift number)
+
+
 def main():
     mode = get_mode()
     message = get_message()
@@ -11,7 +13,8 @@ def main():
     else:
         for key in range(1, MAX_KEY_SIZE + 1):
             print(key, get_translated_message("decrypt", message, key))
-            
+
+
 def get_mode():
     while True:
         print("Do you wish to encrypt or decrypt or brute-force a message?")
@@ -21,18 +24,20 @@ def get_mode():
         else:
             print('Enter either "encrypt" or "e" or "decrypt" or "d".')
 
+
 def get_message():
     print("Enter your message:")
     return input()
 
+
 def get_key():
-    key = 0
     while True:
-        print("Enter the key number (1-%s)" % (MAX_KEY_SIZE))
+        print("Enter the key number (1-%s)" % MAX_KEY_SIZE)
         key = int(input())
-        if (key >= 1 and key <= MAX_KEY_SIZE):
+        if 1 <= key <= MAX_KEY_SIZE:
             return key
-    #Gets the number of characters the message with get shifted by
+    # Gets the number of characters the message with get shifted by
+
 
 def get_translated_message(mode, message, key):
     if mode[0] == "d":
@@ -56,5 +61,7 @@ def get_translated_message(mode, message, key):
 
             translated += SYMBOLS[symbol_index]
     return translated
+
+
 if __name__ == "__main__":
     main()
