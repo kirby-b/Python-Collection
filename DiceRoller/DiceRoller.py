@@ -31,15 +31,16 @@ dice_art = {
         "│  *   *  │",
         "│  *   *  │",
         "└─────────┘")
-} #Dice art
+}   # Dice art
 
 dice = []
 total = 0
 num_of_dice = input("How many dice do you want?: ")
-#Gets the number of dice
+# Gets the number of dice
 while True:
     if not num_of_dice.isnumeric():
-        num_of_dice = input("Invalid Input, please input an a whole number(1 2 3 4 5...)\n How many dice do you want?: ")
+        num_of_dice = input("""Invalid Input, please input an a whole number(1 2 3 4 5...)
+        \n How many dice do you want?: """)
     else:
         break
 
