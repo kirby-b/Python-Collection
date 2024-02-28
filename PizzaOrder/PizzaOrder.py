@@ -13,8 +13,7 @@ def main():
         else:
             break
     i = 0
-    print(
-        "You will not be asked for the rest of the pizza information. This includes a name, code, and how many to order. The price will be automatically generated.")
+    print("You will not be asked for the rest of the pizza information. This includes a name, code, and how many to order. The price will be automatically generated.")
     while i <= int(pizzas) - 1:  # Loops for number of pizzas and gets information of each pizza
         value = get_value()  # Gets price
         order.append("Menu Price: $" + str(value))  # Appends price to order list
