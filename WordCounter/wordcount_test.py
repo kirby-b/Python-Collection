@@ -2,7 +2,7 @@ from word_count import word_count
 
 
 def test_word_count():
-    #Checks to see if the spaces are counted correctly
+    # Checks to see if the spaces are counted correctly
     assert word_count("Hello World") == 2
     assert word_count("Hello") == 1
     assert word_count("Lorem Ipsum Dolor Set Amet") == 5
