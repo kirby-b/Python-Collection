@@ -14,7 +14,7 @@ An assortment of python programs. I did most as part of learning books, tutorial
 * Mad Lib: My madlib game I made when starting out.
 * Pig-Latinify: Turns a sentence into pig latin. This is what happens when you let a programmer get bored in class.
 * RPS(Rock Paper Scissors): Just a game of rock paper scissors.
-* Random Competition Code: A collection of coding challenges from competions and stuff. I only keep them because I can and they are kinda neat.
+* Random Competition Code: A collection of coding challenges from competions and stuff. I only keep them because I can, they are kinda neat, and they at least kinda prove I know what Im doing.
 * Slot Machine: Got it out of a programming book and made it a bit more personal. Overall just a fake slot machine.
 * Taxes: Calculates taxes but I dont know helpful it is
 * Tempurature Converter: Converts a temp from one type to the others.
