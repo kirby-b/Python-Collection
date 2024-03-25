@@ -1,6 +1,28 @@
 # Mini Python Projects
 An assortment of python programs. I did most as part of learning books, tutorials, tests, challenges, or boredom.
 
+# Featured Programs (Adding)
+
+* Lorem
+* ipsum
+* dolor
+* sit
+* amet
+* consectetur
+* adipiscing
+* elit
+* Nam
+* mattis
+* augue
+* nisi
+* in
+* sodales
+* leo
+* finibus
+* condimentum
+* Praesent
+* accumsan
+
 # How to use programs
 You have two-way to do this depending on what you intend on doing
 
