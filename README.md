@@ -7,11 +7,13 @@ An assortment of python programs. I did most as part of learning books, tutorial
 * Coin and Dice: A program I made when I first started python. It just simulates a coin flip or dice roll.
 * Deduction Game: A game where you guess a three digit number.
 * Dice Roller: Basically just the dice roller from above, but with ASCII graphics.
+* File Creator: Makes a basic python file with basic class and functions
 * Fizz Buzz: Prints a response based on if a number is divisible by three, five, both, or neither.
 * Garbage Pile: Random functions I made that only have a few use cases and are normally replaceable by built in functions.
 * Hangman: Just a game of hangman with ASCII art.
 * High or Low: Another game I made as a beginner. You just guess whether the next random number will be higher or lower than the current.
 * Mad Lib: My madlib game I made when starting out.
+* Magic PyBall: A magic 8 ball made in python. It also has some extra responses
 * Pig-Latinify: Turns a sentence into pig latin. This is what happens when you let a programmer get bored in class.
 * RPS(Rock Paper Scissors): Just a game of rock paper scissors.
 * Random Competition Code: A collection of coding challenges from competions and stuff. I only keep them because I can, they are kinda neat, and they at least kinda prove I know what Im doing.
