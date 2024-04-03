@@ -3,8 +3,7 @@ class MadLibs:
     # Normal MadLibs
     def simple_mad_lib_mode_func(self):
         import random
-        print(
-            "Welcome To MadLib. I will give you a prompt and then ask for three inputs(they will be inserted at the capitalized words in parentheses).\n")
+        print("Welcome To MadLib. I will give you a prompt and then ask for three inputs(they will be inserted at the capitalized words in parentheses).\n")
         s1 = "___"
         s2 = "___"
         s3 = "___"
@@ -64,8 +63,7 @@ class MadLibs:
         print(s1 + " went to the " + s2 + " with their " + s3)
         print("The " + s1 + " is captain of the " + s2 + " in " + s3 + " city")
         print("The " + s1 + " " + s2 + " fox jumped over the " + s3 + " dog.")
-        print(
-            "If you only knew the " + s1 + " of the dark side. " + s2 + " never told you what happened to your " + s3 + ".")
+        print("If you only knew the " + s1 + " of the dark side. " + s2 + " never told you what happened to your " + s3 + ".")
         print(s1 + " is a famous japanese character who's power is " + s2 + "ing enemies with his " + s3 + ".")
         print(s1 + " scientists study " + s2 + "\'s effect on " + s3 + ".")
         print("It\'s " + s1 + " O'clock and im feeling like " + s2 + " " + s3 + "\'s.")

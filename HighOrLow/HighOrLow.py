@@ -1,6 +1,5 @@
 import random
 
-
 def high_or_low_func():
     print("Welcome to higher or lower. To stop the program please please control + C.")
     while True:
@@ -35,7 +34,6 @@ def high_or_low_func():
         except KeyboardInterrupt:
             print("Thank you for playing")
             break
-
 
 if __name__ == "__main__":
     high_or_low_func()

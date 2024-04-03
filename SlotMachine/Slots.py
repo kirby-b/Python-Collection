@@ -1,7 +1,6 @@
 import random
 from time import sleep
 
-
 def main():
     earnings = 0
     cash = input('Welcome to the Lucky Programmer Slots. How many dollars would you like to put in (1 dollar per spin)')

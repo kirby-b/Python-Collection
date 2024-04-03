@@ -1,6 +1,5 @@
 import random
 
-
 def main():
     order = []
     pizzas = input("How many holographic future pizzas would you like to order: ")  # Gets the pizza creation amount
