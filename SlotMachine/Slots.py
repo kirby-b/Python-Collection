@@ -3,21 +3,20 @@ from time import sleep
 
 def main():
     earnings = 0
-    cash = input('Welcome to the Lucky Programmer Slots. How many dollars would you like to put in (1 dollar per spin)')
+    cash = input("Welcome to the Lucky Programmer Slots. How many dollars would you like to put in (1 dollar per spin)")
     spins = int(cash)
     while True:
         try:
-            while spins >= 0:
-                if spins == 0:
-                    cash = input("You are out of cash! \nPlease insert more money to continue!")
-                    while not cash.isnumeric():
-                        cash = input("Invalid input! Please try again:")
-                    spins = int(cash)
-                print("Spinning slots")
-                earnings += winnings()
-                print(f"Current Winnings: {earnings}")
-                sleep(1)
-                spins -= 1
+            if spins == 0:
+                cash = input("You are out of cash! \nPlease insert more money to continue!")
+                while not cash.isnumeric():
+                    cash = input("Invalid input! Please try again:")
+                spins = int(cash)
+            print("Spinning slots")
+            earnings += winnings()
+            print(f"Current Winnings: {earnings}")
+            sleep(1)
+            spins -= 1
         except KeyboardInterrupt:
             print("Thank you for playing. Come again and test your luck.")
             break

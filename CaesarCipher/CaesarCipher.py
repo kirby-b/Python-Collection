@@ -22,7 +22,7 @@ def get_mode():
         if mode in ["encrypt", "e", "decrypt", "d", "brute", "b"]:
             return mode
         else:
-            print('Enter either "encrypt" or "e" or "decrypt" or "d".')
+            print("Enter either \"encrypt\" or \"e\" or \"decrypt\" or \"d\".")
 
 
 def get_message():
