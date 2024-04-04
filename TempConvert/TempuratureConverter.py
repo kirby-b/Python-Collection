@@ -4,6 +4,7 @@ def main():
     unit = input("Is this temperature in Celsius, Fahrenheit, Kelvin (C/F/K):").lower()
     while unit not in ["celsius", "c", "fahrenheit", "f", "kelvin", "k"]:
         unit = input("Please input a valid temperature unit (Celsius, Fahrenheit, Kelvin, C, F, K:").lower()
+    convert(unit, temp)
 
 
 def convert(unit, temp):
