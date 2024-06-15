@@ -36,7 +36,7 @@ def get_key():
         key = int(input())
         if 1 <= key <= MAX_KEY_SIZE:
             return key
-    # Gets the number of characters the message with get shifted by
+    # Gets the number of characters the message will get shifted by
 
 
 def get_translated_message(mode, message, key):
