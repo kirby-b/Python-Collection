@@ -41,8 +41,8 @@ def main():
 
 # Calculates federal tax
 def income_tax(money):
-    # Gets federal tax numbers
     tax = 0
+    # Gets federal tax numbers for different brackets
     tax_bracket_nums = {
         "b1": 11000,
         "b2": 44725,
@@ -64,11 +64,16 @@ def income_tax(money):
         tax = money * 0.10
     else:
         for x in tax_bracket_percents:
+            # Gets the current loop of the tax numbers
             percent = int(tax_bracket_percents[x])
             taxable = int(tax_bracket_nums[x])
+            # If it is on the last index of the two value dictionaries, It just give a flat tax rate.
             if x == 6:
                 tax = tax + (money * (percent / 100))
                 break
+            # If you arent making massive amounts of money, it will loop until money is greater
+            # than taxable. At this point it calculates tax by taking taxable and taking out the 
+            # correct percent. If it is less than taxable, it takes a percent from your total.
             if money > taxable:
                 tax = tax + (taxable * (percent / 100))
                 money = money - taxable
