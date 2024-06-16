@@ -23,7 +23,7 @@ def pigify(word_string: str):
     for x in range(len(countable)):  # Loops through the list
         word = countable[x]  # Gets the word
         begin = word[0]  # Gets the beginning of the word
-        if begin in "aeiouAEIOU":
+        if begin in "aeiouAEIOU1234567890":
             word = word + " yay "  # If it starts with a vowel, It just gets "yay" added to the end
         else:
             # If it begins with anything else(a consonant), It removes the first letter and adds it
