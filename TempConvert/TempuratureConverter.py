@@ -19,7 +19,7 @@ def convert(unit, temp):
         print(f"The temperature in Celsius is: {ntemp}°C")
         ntemp = round((temp - 32) * 5 / 9 + 273.15, 2)
         print(f"The temperature in Kelvin is: {ntemp}°K")
-        # Prints what a temp in Fahrenheit is in Celsius and kelvin
+    # Prints what a temp in Fahrenheit is in Celsius and kelvin
     elif unit == "k":
         ntemp = round(temp - 273.15, 2)
         print(f"The temperature in Celsius is: {ntemp}°C")

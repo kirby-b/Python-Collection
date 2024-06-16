@@ -17,6 +17,7 @@ def main():
 
 def get_mode():
     while True:
+        # Gets mode and validates input
         print("Do you wish to encrypt or decrypt or brute-force a message?")
         mode = input().lower()
         if mode in ["encrypt", "e", "decrypt", "d", "brute", "b"]:
