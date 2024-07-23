@@ -1,5 +1,5 @@
 # Mini Python Projects
-An assortment of python programs. I did most as part of learning books, tutorials, tests, challenges, or boredom.
+An assortment of python programs. I did most out of boredom, learning, or someone challenging me to do it.
 
 # Featured Programs
 
@@ -35,9 +35,9 @@ You have two-way to do this depending on what you intend on doing
    
 -Make sure you have python downloaded
 
--Open Download the zip and unzip it.
+-Download the zip and unzip it.
 
--Open up the terminal and type in cd followed by the exact file location of the files EX: cd /User/Docments/SomeDudesCode/Mini-Python-Projects 
+-Open up the terminal and type in cd followed by the exact file location of the files EX: cd /User/Docments/SomeDudesCode/Python-Projects 
 
 -Type python followed by the file name EX: python hangman.py
 
