@@ -1,4 +1,4 @@
-# Mini Python Projects
+# Python Projects
 An assortment of python programs. I did most out of boredom, learning, or someone challenging me to do it.
 
 # Featured Programs
