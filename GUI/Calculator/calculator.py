@@ -1,13 +1,13 @@
 import wx
 
-class HelloFrame(wx.Frame):
+class Calculator(wx.Frame):
     """
     A Frame that says Hello World
     """
 
     def __init__(self, *args, **kw):
         # ensure the parent's __init__ is called
-        super(HelloFrame, self).__init__(*args, **kw)
+        super(Calculator, self).__init__(*args, **kw)
 
         # create a panel in the frame
         pnl = wx.Panel(self)
@@ -89,6 +89,6 @@ if __name__ == '__main__':
     # When this module is run (not imported) then create the app, the
     # frame, show it, and start the event loop.
     app = wx.App()
-    frm = HelloFrame(None, title='Calculator')
+    frm = Calculator(None, title='Calculator')
     frm.Show()
     app.MainLoop()
